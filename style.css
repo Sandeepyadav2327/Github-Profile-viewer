@@ -1,0 +1,35 @@
+.heading{
+    background-color: rgb(76, 76, 250);
+    height: 150px;
+    width: 100%;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: aliceblue;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.profiles{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: rgb(196, 243, 245);
+}
+img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
+.cards{
+    margin: 10px;
+    align-content: center;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 10%;
+    background-color: rgb(242, 237, 160);
+}
