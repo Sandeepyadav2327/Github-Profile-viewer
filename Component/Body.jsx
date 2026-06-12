@@ -3,18 +3,26 @@ import { useEffect, useState } from "react";
 
 function Body(){
     const [Profile,setProfile] = useState([]);
-    const [number,setNumber]=useState(30);
+    const [numberOfProfile,setnumberOfProfile]=useState("");
 
-    async function generateProfile() {
-        const responce= await fetch(`https://api.github.com/users?per_page=${number}`);
+    async function generateProfile(count) {
+        const start=Math.floor(1+Math.random()*10000);
+        const responce= await fetch(`https://api.github.com/users?since=${start}&per_page=${count}`);
         const data= await responce.json();
+        console.log("Sandeep");
+        console.log(data);
         setProfile(data);
     }
     useEffect(()=>{
-        generateProfile();
-    },[number])
+        generateProfile(30);
+    },[])
 
     return (
+        <div className="but">
+        <input type="number" placeholder="Enter the number of profile you want to see" className="inpt" value={numberOfProfile}  onChange={(e)=>setnumberOfProfile(e.target.value)}></input>
+        <button className="btn2" onClick={()=>generateProfile(Number(numberOfProfile))}>Search Profile</button>
+
+        
         <div className="profiles">
             {
                 Profile.map((values)=>{
@@ -27,6 +35,7 @@ function Body(){
                     )
                 })
             }
+        </div>
         </div>
     )
 
