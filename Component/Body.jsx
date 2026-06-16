@@ -1,21 +1,9 @@
 import { useEffect, useState } from "react";
+import useFetch from "./useFetch";
 
 
 function Body(){
-    const [Profile,setProfile] = useState([]);
-    const [numberOfProfile,setnumberOfProfile]=useState("");
-
-    async function generateProfile(count) {
-        const start=Math.floor(1+Math.random()*10000);
-        const responce= await fetch(`https://api.github.com/users?since=${start}&per_page=${count}`);
-        const data= await responce.json();
-        console.log("Sandeep");
-        console.log(data);
-        setProfile(data);
-    }
-    useEffect(()=>{
-        generateProfile(30);
-    },[])
+   const {generateProfile,numberOfProfile,setnumberOfProfile,Profile}=useFetch();// custom hook jo banaye the usse call kiye hai 
 
     return (
         <div className="but">
