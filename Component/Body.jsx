@@ -3,6 +3,7 @@ import useFetch from "./useFetch";
 
 
 function Body(){
+    
    const {generateProfile,numberOfProfile,setnumberOfProfile,Profile}=useFetch();// custom hook jo banaye the usse call kiye hai 
 
     return (

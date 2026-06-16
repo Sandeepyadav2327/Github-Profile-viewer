@@ -2,6 +2,7 @@ import { useState ,useEffect} from "react";
 
 // create a custom hook usefetch , so that it can be used anywhere without writing all the code 
 export default function useFetch(){
+
     const [Profile,setProfile] = useState([]);
     const [numberOfProfile,setnumberOfProfile]=useState("");
 
